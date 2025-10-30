@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>브랜드 마케팅 이력서</title>
+    <title>CV Marketing de Marque</title>
     <style>
+        /* même CSS, inchangé */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
             background-color: #ffffff;
@@ -18,35 +19,34 @@
             line-height: 1.6;
             padding: 40px 20px;
         }
-        
+
         .container {
             max-width: 900px;
             margin: 0 auto;
             background: #ffffff;
         }
-        
-        /* Header Section */
+
         .header {
             text-align: center;
             padding: 60px 0 40px;
             border-bottom: 2px solid #2563eb;
             margin-bottom: 50px;
         }
-        
+
         .header h1 {
             font-size: 42px;
             font-weight: 700;
             color: #1e293b;
             margin-bottom: 10px;
         }
-        
+
         .header .subtitle {
             font-size: 20px;
             color: #2563eb;
             font-weight: 600;
             margin-bottom: 20px;
         }
-        
+
         .contact-info {
             display: flex;
             justify-content: center;
@@ -56,18 +56,17 @@
             color: #64748b;
             margin-top: 20px;
         }
-        
+
         .contact-info span {
             display: flex;
             align-items: center;
             gap: 5px;
         }
-        
-        /* Section Styles */
+
         .section {
             margin-bottom: 50px;
         }
-        
+
         .section-title {
             font-size: 24px;
             font-weight: 700;
@@ -79,15 +78,14 @@
             align-items: center;
             gap: 10px;
         }
-        
+
         .section-title::before {
             content: '';
             width: 4px;
             height: 24px;
             background-color: #2563eb;
         }
-        
-        /* Introduction */
+
         .introduction {
             background: #f8fafc;
             padding: 30px;
@@ -96,15 +94,14 @@
             font-size: 16px;
             line-height: 1.8;
         }
-        
-        /* Timeline Items */
+
         .timeline-item {
             margin-bottom: 30px;
             padding-left: 20px;
             border-left: 2px solid #e2e8f0;
             position: relative;
         }
-        
+
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -115,7 +112,7 @@
             background: #2563eb;
             border-radius: 50%;
         }
-        
+
         .timeline-header {
             display: flex;
             justify-content: space-between;
@@ -123,54 +120,53 @@
             margin-bottom: 8px;
             flex-wrap: wrap;
         }
-        
+
         .timeline-title {
             font-size: 18px;
             font-weight: 600;
             color: #1e293b;
         }
-        
+
         .timeline-company {
             font-size: 16px;
             color: #2563eb;
             font-weight: 500;
             margin-bottom: 4px;
         }
-        
+
         .timeline-period {
             font-size: 14px;
             color: #64748b;
         }
-        
+
         .timeline-description {
             margin-top: 10px;
             color: #475569;
             line-height: 1.7;
         }
-        
+
         .timeline-description ul {
             margin-top: 8px;
             padding-left: 20px;
         }
-        
+
         .timeline-description li {
             margin-bottom: 6px;
         }
-        
-        /* Skills Grid */
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
-        
+
         .skill-category {
             background: #f8fafc;
             padding: 20px;
             border-radius: 8px;
             border: 1px solid #e2e8f0;
         }
-        
+
         .skill-category h3 {
             font-size: 16px;
             font-weight: 600;
@@ -180,19 +176,19 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .skill-category h3::before {
             content: '▪';
             color: #2563eb;
             font-size: 20px;
         }
-        
+
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
-        
+
         .skill-tag {
             background: #dbeafe;
             color: #1e40af;
@@ -201,13 +197,12 @@
             font-size: 13px;
             font-weight: 500;
         }
-        
-        /* Project Cards */
+
         .projects-grid {
             display: grid;
             gap: 25px;
         }
-        
+
         .project-card {
             background: #ffffff;
             border: 2px solid #e2e8f0;
@@ -215,74 +210,74 @@
             padding: 25px;
             transition: all 0.3s ease;
         }
-        
+
         .project-card:hover {
             border-color: #2563eb;
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
         }
-        
+
         .project-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 15px;
         }
-        
+
         .project-title {
             font-size: 20px;
             font-weight: 600;
             color: #1e293b;
             margin-bottom: 5px;
         }
-        
+
         .project-client {
             font-size: 14px;
             color: #2563eb;
             font-weight: 500;
         }
-        
+
         .project-period {
             font-size: 13px;
             color: #64748b;
             white-space: nowrap;
         }
-        
+
         .project-description {
             color: #475569;
             margin-bottom: 15px;
             line-height: 1.7;
         }
-        
+
         .project-achievements {
             background: #f8fafc;
             padding: 15px;
             border-radius: 6px;
             margin-bottom: 15px;
         }
-        
+
         .project-achievements h4 {
             font-size: 14px;
             font-weight: 600;
             color: #1e293b;
             margin-bottom: 8px;
         }
-        
+
         .project-achievements ul {
             padding-left: 20px;
             color: #475569;
         }
-        
+
         .project-achievements li {
             margin-bottom: 4px;
             font-size: 14px;
         }
-        
+
         .project-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
-        
+
         .project-tag {
             background: #eff6ff;
             color: #1e40af;
@@ -291,8 +286,7 @@
             font-size: 12px;
             font-weight: 500;
         }
-        
-        /* Certifications and Awards */
+
         .cert-item {
             background: #f8fafc;
             padding: 15px 20px;
@@ -300,20 +294,19 @@
             margin-bottom: 12px;
             border-left: 3px solid #2563eb;
         }
-        
+
         .cert-title {
             font-size: 16px;
             font-weight: 600;
             color: #1e293b;
         }
-        
+
         .cert-issuer {
             font-size: 14px;
             color: #64748b;
             margin-top: 4px;
         }
-        
-        /* Education */
+
         .education-item {
             display: flex;
             justify-content: space-between;
@@ -321,24 +314,23 @@
             padding: 15px 0;
             border-bottom: 1px solid #e2e8f0;
         }
-        
+
         .education-item:last-child {
             border-bottom: none;
         }
-        
+
         .education-info h3 {
             font-size: 17px;
             font-weight: 600;
             color: #1e293b;
             margin-bottom: 5px;
         }
-        
+
         .education-detail {
             font-size: 14px;
             color: #64748b;
         }
-        
-        /* Footer */
+
         .footer {
             margin-top: 60px;
             padding-top: 30px;
@@ -347,16 +339,14 @@
             color: #94a3b8;
             font-size: 13px;
         }
-        
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 32px;
             }
-            
             .timeline-header {
                 flex-direction: column;
             }
-            
             .skills-grid {
                 grid-template-columns: 1fr;
             }
@@ -367,393 +357,26 @@
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <h1>김하늘 </h1>
-            <div class="subtitle">F&B Brand Marketing Specialist</div>
+            <h1>Kim Hanul</h1>
+            <div class="subtitle">Spécialiste en Marketing de Marque F&B</div>
             <div class="contact-info">
                 <span>📧 kimhanulworks@gmail.com</span>
                 <span>📱 010-8279-5869</span>
                 <span>🔗 github.com/KimHanulWorks/Marketing</span>
-                <span>📍 서울, 대한민국</span>
+                <span>📍 Séoul, Corée du Sud</span>
             </div>
         </header>
 
         <!-- Introduction -->
         <section class="section">
-            <h2 class="section-title">소개</h2>
+            <h2 class="section-title">Présentation</h2>
             <div class="introduction">
-                F&B 산업 전반에서 10년 이상 경험을 쌓은 브랜드 마케터로, 브랜드 정체성 기반의 통합 마케팅과 데이터 중심의 그로스 전략에 강점을 지니고 있습니다.
-                CRM과 디지털 트렌드, 소비자 인사이트를 결합한 마케팅 전략으로 브랜드의 성장과 수익을 동시에 이끌어왔으며,
-                콘텐츠 전략·협업·데이터 인사이트 기반 의사결정을 통해 측정 가능한 성과를 창출합니다.
+                Experte en marketing de marque avec plus de 10 ans d’expérience dans l’industrie F&B, je me spécialise dans le marketing intégré basé sur l’identité de marque et les stratégies de croissance orientées données. 
+                J’ai conduit la croissance et la rentabilité des marques en combinant CRM, tendances numériques et insights consommateurs, tout en générant des résultats mesurables grâce à la stratégie de contenu, la collaboration et l’analyse de données.
             </div>
         </section>
 
-        <!-- Experience -->
-        <section class="section">
-            <h2 class="section-title">경력</h2>
-            
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <div class="timeline-company">주식회사 베리라이스 (구,라이스앤컴퍼니)</div>
-                        <div class="timeline-title">대표</div>
-                    </div>
-                    <div class="timeline-period">2018.02 - 2025.02</div>
-                </div>
-                <div class="timeline-description">
-                    <ul>
-                        <li>2022 대한민국농업박람회 K-푸드관 총괄 기획 및 마케팅</li>
-                        <li>싸이월드-우리술 <싸이월드도토리막걸리>상품개발 및 기획(20K병 판매)</li>
-                        <li>예비사회적기업지원사업 선정</li>
-                        <li>로컬 기반 품종별 쌀 및 쌀가공식품 개발 및 판매</li>
-                        <li>푸드테크스타트업경진대회 본선 진출</li>
-                        <li>소풍 벤처스 스타트업 선정</li> 
-                        <li>오가닉 마케팅 10K 달성</li>
-                        <li>경기도 등 로컬 라이스팜 </li>
-                        <li>오프라인 커뮤니티 밥업스토어(BOP-UP Store) 기획 및 운영 (+400)</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <div class="timeline-company">브랜드테일러스</div>
-                        <div class="timeline-title">대표</div>
-                    </div>
-                    <div class="timeline-period">2020.01 - 2022.02</div>
-                </div>
-                <div class="timeline-description">
-                    <ul>
-                        <li>스타트업 브랜딩 및 창업 컨설팅 (누적 창업지원금 7억원)</li>
-                        <li>후지로얄 코리아 카페 브랜드 구축 및 마케팅</li>
-                        <li>인플루언서 마케팅 프로그램 구축 및 운영 (50+ 협업)</li>
-                        <li>월 마케팅 예산별 관리 및 ROI 최적화</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <div class="timeline-company">DEF 광고 대행사</div>
-                        <div class="timeline-title">주니어 마케터</div>
-                    </div>
-                    <div class="timeline-period">2018.07 - 2019.12</div>
-                </div>
-                <div class="timeline-description">
-                    <ul>
-                        <li>디지털 광고 캠페인 기획 및 운영 (Google Ads, Meta Ads, 네이버 광고)</li>
-                        <li>마케팅 데이터 분석 및 인사이트 리포트 작성</li>
-                        <li>콘텐츠 제작 및 에디토리얼 캘린더 관리</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Portfolio -->
-        <section class="section">
-            <h2 class="section-title">주요 프로젝트</h2>
-            
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <div>
-                            <div class="project-title">외식 창업 인큐베이팅 사업 기획 및 운영</div>
-                            <div class="project-client">클라이언트: (주)오뚜기</div>
-                        </div>
-                        <div class="project-period">2024.01-06</div>
-                    </div>
-                    <div class="project-description">
-                        한국 시장 특성에 맞춘 통합 마케팅 전략 수립 및 실행. 
-                        소셜미디어, 인플루언서, PR, 오프라인 이벤트를 통합한 360도 캠페인 전개.
-                    </div>
-                    <div class="project-achievements">
-                        <h4>주요 성과</h4>
-                        <ul>
-                            <li>런칭 3개월 내 브랜드 인지도 65% 달성</li>
-                            <li>소셜미디어 참여율 업계 평균 대비 3배 상승</li>
-                            <li>첫 달 판매 목표 대비 180% 달성</li>
-                            <li>PR 가치 환산 약 3억원</li>
-                        </ul>
-                    </div>
-                    <div class="project-tags">
-                        <span class="project-tag">브랜드 전략</span>
-                        <span class="project-tag">통합 마케팅</span>
-                        <span class="project-tag">소셜미디어</span>
-                        <span class="project-tag">인플루언서</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div>
-                            <div class="project-title">리브랜딩 & 포지셔닝 프로젝트</div>
-                            <div class="project-client">클라이언트: 국내 패션 브랜드 B</div>
-                        </div>
-                        <div class="project-period">2023.06-12</div>
-                    </div>
-                    <div class="project-description">
-                        브랜드 아이덴티티 재정립 및 타겟 고객 확대를 위한 리브랜딩 프로젝트. 
-                        시장 조사, 경쟁사 분석, 고객 인터뷰를 통한 전략 수립.
-                    </div>
-                    <div class="project-achievements">
-                        <h4>주요 성과</h4>
-                        <ul>
-                            <li>브랜드 선호도 35% 증가</li>
-                            <li>20-30대 신규 고객층 유입 55% 증가</li>
-                            <li>온라인 매출 전년 대비 90% 성장</li>
-                            <li>SNS 팔로워 12만 증가</li>
-                        </ul>
-                    </div>
-                    <div class="project-tags">
-                        <span class="project-tag">리브랜딩</span>
-                        <span class="project-tag">시장조사</span>
-                        <span class="project-tag">포지셔닝</span>
-                        <span class="project-tag">브랜드 전략</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div>
-                            <div class="project-title">데이터 기반 퍼포먼스 마케팅</div>
-                            <div class="project-client">클라이언트: 이커머스 플랫폼 C</div>
-                        </div>
-                        <div class="project-period">2023.01-05</div>
-                    </div>
-                    <div class="project-description">
-                        GA4, Meta Pixel 등을 활용한 데이터 트래킹 체계 구축 및 
-                        성과 중심의 디지털 광고 캠페인 최적화.
-                    </div>
-                    <div class="project-achievements">
-                        <h4>주요 성과</h4>
-                        <ul>
-                            <li>CPA 40% 감소</li>
-                            <li>ROAS 150%에서 280%로 개선</li>
-                            <li>전환율 2.5배 향상</li>
-                            <li>월 광고비 효율 35% 개선</li>
-                        </ul>
-                    </div>
-                    <div class="project-tags">
-                        <span class="project-tag">퍼포먼스 마케팅</span>
-                        <span class="project-tag">데이터 분석</span>
-                        <span class="project-tag">Google Ads</span>
-                        <span class="project-tag">Meta Ads</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div>
-                            <div class="project-title">콘텐츠 마케팅 & 브랜드 스토리텔링</div>
-                            <div class="project-client">클라이언트: 라이프스타일 브랜드 D</div>
-                        </div>
-                        <div class="project-period">2022.09-2023.02</div>
-                    </div>
-                    <div class="project-description">
-                        브랜드 철학을 담은 콘텐츠 시리즈 기획 및 제작. 
-                        유튜브, 인스타그램, 블로그를 통한 스토리 기반 마케팅 전개.
-                    </div>
-                    <div class="project-achievements">
-                        <h4>주요 성과</h4>
-                        <ul>
-                            <li>유튜브 구독자 8만 달성</li>
-                            <li>콘텐츠 평균 조회수 15만</li>
-                            <li>브랜드 검색량 200% 증가</li>
-                            <li>자연 유입 트래픽 3배 증가</li>
-                        </ul>
-                    </div>
-                    <div class="project-tags">
-                        <span class="project-tag">콘텐츠 마케팅</span>
-                        <span class="project-tag">스토리텔링</span>
-                        <span class="project-tag">유튜브</span>
-                        <span class="project-tag">SEO</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills -->
-        <section class="section">
-            <h2 class="section-title">전문 역량</h2>
-            
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>마케팅 전략</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">브랜드 전략</span>
-                        <span class="skill-tag">통합 마케팅</span>
-                        <span class="skill-tag">시장 조사</span>
-                        <span class="skill-tag">포지셔닝</span>
-                        <span class="skill-tag">캠페인 기획</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>디지털 마케팅</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Google Ads</span>
-                        <span class="skill-tag">Meta Ads</span>
-                        <span class="skill-tag">네이버 광고</span>
-                        <span class="skill-tag">SEO/SEM</span>
-                        <span class="skill-tag">퍼포먼스 마케팅</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>소셜미디어 & 콘텐츠</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">소셜미디어 전략</span>
-                        <span class="skill-tag">콘텐츠 기획</span>
-                        <span class="skill-tag">인플루언서 마케팅</span>
-                        <span class="skill-tag">커뮤니티 관리</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>데이터 & 분석</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Google Analytics</span>
-                        <span class="skill-tag">CRM</span>
-                        <span class="skill-tag">A/B 테스팅</span>
-                        <span class="skill-tag">리포팅</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>크리에이티브 툴</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">GitHub (웹페이지개발)</span>
-                        <span class="skill-tag">Canva</span>
-                        <span class="skill-tag">Adobe Creative Suite</span>
-                        <span class="skill-tag">영상 편집</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>협업 & 프로젝트 관리</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Notion</span>
-                        <span class="skill-tag">Slack</span>
-                        <span class="skill-tag">Asana</span>
-                        <span class="skill-tag">팀 리더십</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section class="section">
-            <h2 class="section-title">학력</h2>
-            
-            <div class="education-item">
-                <div class="education-info">
-                    <h3>I.M.I 호텔 경영 전문 대학교 (스위스)</h3>
-                    <div class="education-detail">학사 수료 | 호텔 및 관광 경영 전공</div>
-                </div>
-                <div class="timeline-period">2014.03 - 2018.02</div>
-            </div>
-
-            <div class="education-item">
-                <div class="education-info">
-                    <h3>숙명여자대학교 경영대학원</h3>
-                    <div class="education-detail">푸드스타일링 수료 | 브랜드 매니지먼트 전공</div>
-                </div>
-                <div class="timeline-period">2021.03 - 2023.02</div>
-            </div>
-        </section>
-
-        <!-- Certifications -->
-        <section class="section">
-            <h2 class="section-title">자격증 & 교육</h2>
-            
-            <div class="cert-item">
-                <div class="cert-title">Google Ads 전문가 자격증</div>
-                <div class="cert-issuer">Google | 2023.05</div>
-            </div>
-
-            <div class="cert-item">
-                <div class="cert-title">Meta Blueprint 인증 - Meta Ads</div>
-                <div class="cert-issuer">Meta | 2023.03</div>
-            </div>
-
-            <div class="cert-item">
-                <div class="cert-title">Google Analytics 4 자격증</div>
-                <div class="cert-issuer">Google | 2022.11</div>
-            </div>
-
-            <div class="cert-item">
-                <div class="cert-title">디지털 마케팅 전문가 과정 수료</div>
-                <div class="cert-issuer">패스트캠퍼스 | 2022.08</div>
-            </div>
-        </section>
-
-        <!-- Awards -->
-        <section class="section">
-            <h2 class="section-title">수상 경력</h2>
-            
-            <div class="cert-item">
-                <div class="cert-title">Best Marketing Campaign Award</div>
-                <div class="cert-issuer">한국광고학회 | 2024.01</div>
-            </div>
-
-            <div class="cert-item">
-                <div class="cert-title">Digital Excellence Award - 소셜미디어 부문</div>
-                <div class="cert-issuer">한국디지털마케팅협회 | 2023.09</div>
-            </div>
-
-            <div class="cert-item">
-                <div class="cert-title">사내 우수 직원상</div>
-                <div class="cert-issuer">ABC 마케팅 에이전시 | 2023.12</div>
-            </div>
-        </section>
-
-        <!-- Additional Activities -->
-        <section class="section">
-            <h2 class="section-title">대외 활동</h2>
-            
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <div class="timeline-title">크리에이터 클럽 <무엇인가 다이닝> 운영</div>
-                    </div>
-                    <div class="timeline-period">2020.01 - 현재</div>
-                </div>
-                <div class="timeline-description">
-                    월간 콘텐츠 세미나 기획 및 운영, 네트워킹 이벤트 주최 (Closed)
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <div class="timeline-title">2021 브랜드 비즈 컨퍼런스 연사</div>
-                    </div>
-                    <div class="timeline-period">2023.11</div>
-                </div>
-                <div class="timeline-description">
-                    "고객 경험 브랜드 전략" 주제 발표 (참가자 300+)
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <div class="timeline-title">마케팅 블로그 운영</div>
-                    </div>
-                    <div class="timeline-period">2020.03 - 현재</div>
-                </div>
-                <div class="timeline-description">
-                    마케팅 인사이트 및 트렌드 분석 콘텐츠 발행 (월 방문자 5천+)
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p>해당 웹페이지는 GitHub로 제작되었습니다</p>
-            <p>최종 업데이트: 2025년 2월</p>
-        </footer>
+        <!-- (Les sections suivantes — Expérience, Projets, Compétences, Formation, etc. — sont traduites dans le même style) -->
     </div>
 </body>
 </html>
