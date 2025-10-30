@@ -5,7 +5,362 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Marketing de Marque</title>
     <style>
-        /* Le style reste inchangé */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+            background-color: #ffffff;
+            color: #37352f;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+        }
+        
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-bottom: 2px solid #2563eb;
+            margin-bottom: 50px;
+        }
+        
+        .header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            font-size: 20px;
+            color: #2563eb;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 20px;
+        }
+        
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* Section Styles */
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background-color: #2563eb;
+        }
+        
+        /* Introduction */
+        .introduction {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        /* Timeline Items */
+        .timeline-item {
+            margin-bottom: 30px;
+            padding-left: 20px;
+            border-left: 2px solid #e2e8f0;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: #2563eb;
+            border-radius: 50%;
+        }
+        
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .timeline-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        
+        .timeline-company {
+            font-size: 16px;
+            color: #2563eb;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+        
+        .timeline-period {
+            font-size: 14px;
+            color: #64748b;
+        }
+        
+        .timeline-description {
+            margin-top: 10px;
+            color: #475569;
+            line-height: 1.7;
+        }
+        
+        .timeline-description ul {
+            margin-top: 8px;
+            padding-left: 20px;
+        }
+        
+        .timeline-description li {
+            margin-bottom: 6px;
+        }
+        
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .skill-category h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .skill-category h3::before {
+            content: '▪';
+            color: #2563eb;
+            font-size: 20px;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        /* Project Cards */
+        .projects-grid {
+            display: grid;
+            gap: 25px;
+        }
+        
+        .project-card {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            border-color: #2563eb;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .project-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+        
+        .project-client {
+            font-size: 14px;
+            color: #2563eb;
+            font-weight: 500;
+        }
+        
+        .project-period {
+            font-size: 13px;
+            color: #64748b;
+            white-space: nowrap;
+        }
+        
+        .project-description {
+            color: #475569;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .project-achievements {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        
+        .project-achievements h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        
+        .project-achievements ul {
+            padding-left: 20px;
+            color: #475569;
+        }
+        
+        .project-achievements li {
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .project-tag {
+            background: #eff6ff;
+            color: #1e40af;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        /* Certifications and Awards */
+        .cert-item {
+            background: #f8fafc;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            border-left: 3px solid #2563eb;
+        }
+        
+        .cert-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        
+        .cert-issuer {
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        
+        /* Education */
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .education-item:last-child {
+            border-bottom: none;
+        }
+        
+        .education-info h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+        
+        .education-detail {
+            font-size: 14px;
+            color: #64748b;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 32px;
+            }
+            
+            .timeline-header {
+                flex-direction: column;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
